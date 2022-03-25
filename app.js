@@ -32,7 +32,7 @@ bot.use(session({
 
 bot.action('join', ctx => {
 
-	ctx.telegram.sendMessage(ctx.chat.id, `Task 1 (Join our Telegram Community) \n\nIf you are already a member of our Telegram chat group @zelenskyytoken, you can skip this step by copying and sending the below-quoted text as a message to the group. \n\n"Hello ZSK Soldiers, click https://coinsniper.net/coin/28893 to vote for our beloved $ZSK token today" \n\nNOTE - Do not include the quote symbol in your message " ", Send only the texts inside the quote. If you have not joined our group yet, please complete this first step by clicking the link below to join \nhttps://t.me/zelenskyytoken \n\nClick done to proceed after you have joined.`, {
+	ctx.telegram.sendMessage(ctx.chat.id, "Task 1 (Join our Telegram Community) \n\nIf you are already a member of our Telegram chat group @zelenskyytoken, you can skip this step by copying and sending the below-quoted text as a message to the group.\n👇 \n\n" `Hello ZSK Soldiers, click https://coinsniper.net/coin/28893 to vote for our beloved $ZSK token today` " \n\nNOTE - Do not include the quote symbol in your message " ", Send only the texts inside the quote. If you have not joined our group yet, please complete this first step by clicking the link below to join \nhttps://t.me/zelenskyytoken \n\nClick done to proceed after you have joined.", {
 		reply_markup: {
 			inline_keyboard: [
 				[{
@@ -40,7 +40,8 @@ bot.action('join', ctx => {
 					callback_data: "groupJoin"
 				}]
 			]
-		}
+		},
+		parse_mode: "Markdown"
 	}).catch((e) => console.log(e))
 })
 
