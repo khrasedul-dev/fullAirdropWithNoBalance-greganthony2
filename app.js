@@ -390,7 +390,7 @@ bot.on('text', (ctx) => {
 
 	const message = ctx.update.message.text
 
-	const r = /Airdrop/gi
+	const r = /ZSK Soldiers/gi
 
 	if (message.match(r)) {
 
